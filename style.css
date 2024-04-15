@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* definindo variáveis de cores */ 
+  --color-background: linear-gradient(45deg, hsl(254, 94%, 20%) 0%, hsl(284, 100%, 50%) 100%);
+  --color-main: hsl(0, 0%, 100%); 
+  --color-text: hsl(238, 27%, 28%);
+  --color-phrase: hsl(0, 0%, 0%);
+  --color-button: hsl(35, 100%, 50%);
+  --color-background-phrase: hsl(198, 32%, 92%);
+}
+
+/*     Global     */ 
+
+body {
+  background: var(--color-background);
+  font-size: 1.6rem;
+  height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  width: min(42.8rem, 90%);
+  
+  margin: 23.9rem auto 31.9rem;
+  background: var(--color-main);
+  border-radius: 0.5rem;
+  box-shadow: 0 2rem 5rem 0 hsla(0, 0%, 0%, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+/*     Tipography     */ 
+
+h1,
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  color: var(--color-text);
+}
+
+p,
+button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+.screen2 p {
+  font-family: 'Dancing Script';
+  font-size: 2.4rem;
+  color: var(--color-phrase);
+}
+
+
+/*     screen1     */
+
+.screen1 {
+  height: min(42.4rem, 90%);
+  padding: 4.8rem 6.4rem 6.4rem;
+}
+
+.screen1 h1 {
+  margin-bottom: 1.4rem;
+  width: 25.8rem;
+}
+
+.screen1 p {
+  margin-bottom: 2rem;
+}
+
+.screen1 img:hover{
+  animation-name: shake;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  0% { transform: rotate(-5deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+/*     screen2     */
+
+.screen2 {
+  height: min(56.4rem, 90%);
+  padding: 4.8rem 6.4rem;
+}
+
+h2 {
+  width: 29.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.screen2 p {
+  width: 29.3rem;
+
+  text-align: center;
+  background: var(--color-background-phrase);
+  padding: 1rem;
+  margin-bottom: 1.7rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0 hsla(0, 0%, 33%, 0.5);
+
+  animation-name: emerge;
+  animation-duration: 1.5s;
+}
+
+@keyframes emerge{
+  0%{
+      transform: translateY(200px) scale(0.1);
+      opacity: 0.2;
+  }
+
+  100%{
+      transform: translateY(0) scale(1);
+      opacity: 1;
+  }
+}
+
+button {
+  font-weight: 700;
+  padding: 1.6rem;
+  background-color: var(--color-button);
+  color: var(--color-main);
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
